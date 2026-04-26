@@ -1,0 +1,17 @@
+{
+  "extends": "../../packages/config/tsconfig/workspace.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "rootDir": ".",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "types": ["node", "react"]
+  },
+  "include": ["app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "test/**/*.ts"],
+  "references": [
+    { "path": "../../packages/contracts" },
+    { "path": "../../packages/data" },
+    { "path": "../../packages/security" },
+    { "path": "../../packages/ui" }
+  ]
+}

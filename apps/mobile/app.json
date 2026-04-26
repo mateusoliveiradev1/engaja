@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "Engaja FLV",
+    "slug": "engaja-flv",
+    "scheme": "engaja",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "backgroundColor": "#FFFCF6",
+      "image": "./assets/splash.png",
+      "resizeMode": "contain"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "root": "./app"
+        }
+      ],
+      "expo-dev-client",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permita que o Engaja FLV use a camera para fotos operacionais."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Permita capturar fotos de rotinas e missoes FLV.",
+          "photosPermission": "Permita selecionar fotos ja aprovadas para o feed FLV."
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "enableBackgroundRemoteNotifications": false
+        }
+      ]
+    ],
+    "ios": {
+      "bundleIdentifier": "br.com.engaja.flv",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "br.com.engaja.flv",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFCF6",
+        "foregroundImage": "./assets/adaptive-icon.png"
+      },
+      "permissions": ["CAMERA", "POST_NOTIFICATIONS", "READ_MEDIA_IMAGES"]
+    },
+    "extra": {
+      "apiUrl": "http://localhost:3000"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@engaja/data",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./mobile": {
+      "types": "./dist/mobile.d.ts",
+      "import": "./dist/mobile.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf coverage dist",
+    "db:generate": "drizzle-kit generate --config drizzle.config.ts",
+    "db:migrate": "tsx src/db/scripts/migrate.ts",
+    "db:seed": "tsx src/db/scripts/seed.ts",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "lint": "eslint . --max-warnings=0",
+    "media:cleanup": "tsx src/media/scripts/cleanup.ts",
+    "test": "vitest run --config vitest.config.ts",
+    "test:e2e": "vitest run --config vitest.config.ts --passWithNoTests --dir test/e2e",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@engaja/application": "workspace:*",
+    "@engaja/contracts": "workspace:*",
+    "@engaja/domain": "workspace:*",
+    "@engaja/security": "workspace:*",
+    "@neondatabase/serverless": "1.1.0",
+    "drizzle-orm": "0.45.2",
+    "postgres": "3.4.9",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@engaja/config": "workspace:*",
+    "drizzle-kit": "0.31.10",
+    "rimraf": "catalog:",
+    "tsx": "4.21.0",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

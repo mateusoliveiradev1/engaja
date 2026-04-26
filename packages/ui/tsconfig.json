@@ -1,0 +1,12 @@
+{
+  "extends": "../../packages/config/tsconfig/workspace.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "rootDir": ".",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "types": ["node", "react"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts"],
+  "references": []
+}

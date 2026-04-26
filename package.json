@@ -1,0 +1,64 @@
+{
+  "name": "@engaja/root",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.3",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "pnpm": ">=10.30.3 <11"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "typescript": "6.0.3"
+      }
+    },
+    "auditConfig": {
+      "ignoreCves": [
+        "GHSA-w5hq-g745-h8pq"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "bundle:analyze": "turbo run bundle:analyze",
+    "clean": "turbo run clean",
+    "ci:local": "turbo run lint typecheck test test:e2e unused security:deps security:secrets security:architecture build bundle:analyze visual:qa",
+    "cycles": "turbo run cycles",
+    "db:generate": "turbo run db:generate",
+    "db:migrate": "turbo run db:migrate",
+    "db:seed": "turbo run db:seed",
+    "dev": "turbo run dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "turbo run lint",
+    "security": "turbo run security:deps security:secrets security:architecture",
+    "security:architecture": "turbo run security:architecture",
+    "security:deps": "turbo run security:deps",
+    "security:secrets": "turbo run security:secrets",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "typecheck": "turbo run typecheck",
+    "unused": "turbo run unused",
+    "visual": "turbo run visual:qa",
+    "visual:qa": "turbo run visual:qa"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "dependency-cruiser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-import-resolver-node": "catalog:",
+    "eslint-plugin-boundaries": "catalog:",
+    "eslint-plugin-import-x": "catalog:",
+    "eslint-plugin-unused-imports": "catalog:",
+    "knip": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:"
+  }
+}

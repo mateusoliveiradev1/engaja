@@ -1,0 +1,82 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "globalDependencies": [
+    ".dependency-cruiser.cjs",
+    ".env.example",
+    ".npmrc",
+    ".prettierrc.json",
+    "eslint.config.js",
+    "knip.json",
+    "pnpm-workspace.yaml",
+    "tsconfig.json"
+  ],
+  "globalEnv": ["APP_ENV", "CI", "NODE_ENV"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "bundle:analyze": {
+      "dependsOn": ["build"],
+      "outputs": ["reports/bundle/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "cycles": {
+      "cache": true,
+      "outputs": []
+    },
+    "db:generate": {
+      "cache": true,
+      "outputs": ["drizzle/**", "src/db/migrations/**"]
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "security:architecture": {
+      "cache": true,
+      "outputs": ["reports/security/architecture/**"]
+    },
+    "security:deps": {
+      "cache": true,
+      "outputs": ["reports/security/dependencies/**"]
+    },
+    "security:secrets": {
+      "cache": true,
+      "outputs": ["reports/security/secrets/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
+    },
+    "test:e2e": {
+      "dependsOn": ["build"],
+      "outputs": ["test-results/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "unused": {
+      "cache": true,
+      "outputs": ["reports/knip/**"]
+    },
+    "visual:qa": {
+      "dependsOn": ["build"],
+      "outputs": ["reports/visual/**"]
+    }
+  }
+}

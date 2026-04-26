@@ -1,0 +1,42 @@
+{
+  "name": "@engaja/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "bundle:analyze": "node ../../packages/config/scripts/bundle-budget.mjs api",
+    "clean": "rimraf coverage dist",
+    "db:generate": "node ../../packages/config/scripts/deferred-task.mjs db:generate \"Drizzle schema generation starts in task 3.2\"",
+    "db:migrate": "node ../../packages/config/scripts/deferred-task.mjs db:migrate \"database migrations start in task 3.2\"",
+    "db:seed": "node ../../packages/config/scripts/deferred-task.mjs db:seed \"seed data starts in task 3.11\"",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run --config vitest.config.ts",
+    "test:e2e": "vitest run --config vitest.config.ts --passWithNoTests --dir test/e2e",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@engaja/application": "workspace:*",
+    "@engaja/data": "workspace:*",
+    "@engaja/contracts": "workspace:*",
+    "@engaja/security": "workspace:*",
+    "hono": "4.12.14"
+  },
+  "devDependencies": {
+    "@engaja/config": "workspace:*",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

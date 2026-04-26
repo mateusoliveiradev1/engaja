@@ -1,0 +1,58 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": ["eslint.config.js", ".dependency-cruiser.cjs"],
+      "project": ["*.js", "*.cjs", "*.json"]
+    },
+    "apps/api": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "apps/mobile": {
+      "entry": ["app/_layout.tsx", "app/index.tsx", "src/index.ts"],
+      "project": ["app/**/*.tsx", "src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/application": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/config": {
+      "entry": ["src/index.ts", "vitest/base.ts", "scripts/*.mjs"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest/**/*.ts", "scripts/*.mjs", "vitest.config.ts"]
+    },
+    "packages/contracts": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/data": {
+      "entry": ["drizzle.config.ts", "src/index.ts", "src/db/scripts/*.ts"],
+      "project": ["drizzle.config.ts", "src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/domain": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/security": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+    },
+    "packages/ui": {
+      "entry": ["src/index.ts", "src/native/index.ts"],
+      "project": ["src/**/*.ts", "src/**/*.tsx", "test/**/*.ts", "vitest.config.ts"]
+    }
+  },
+  "ignoreDependencies": [
+    "@types/node",
+    "@types/react",
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser",
+    "babel-preset-expo",
+    "expo-camera",
+    "expo-dev-client",
+    "expo-image-picker",
+    "expo-notifications",
+    "expo-secure-store",
+    "eslint-import-resolver-node"
+  ]
+}

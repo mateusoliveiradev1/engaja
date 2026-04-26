@@ -1,0 +1,16 @@
+{
+  "extends": "./packages/config/tsconfig/workspace.json",
+  "files": [],
+  "references": [
+    { "path": "./apps/api" },
+    { "path": "./apps/mobile" },
+    { "path": "./packages/application" },
+    { "path": "./packages/config" },
+    { "path": "./packages/contracts" },
+    { "path": "./packages/data" },
+    { "path": "./packages/domain" },
+    { "path": "./packages/security" },
+    { "path": "./packages/ui" }
+  ]
+}
+

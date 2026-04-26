@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "baseUrl": "../../../",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@api/*": ["apps/api/src/*"],
+      "@application/*": ["packages/application/src/*"],
+      "@config/*": ["packages/config/src/*"],
+      "@contracts/*": ["packages/contracts/src/*"],
+      "@data/*": ["packages/data/src/*"],
+      "@domain/*": ["packages/domain/src/*"],
+      "@mobile/*": ["apps/mobile/src/*"],
+      "@security/*": ["packages/security/src/*"],
+      "@ui/*": ["packages/ui/src/*"]
+    }
+  }
+}

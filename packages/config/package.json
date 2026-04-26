@@ -1,0 +1,44 @@
+{
+  "name": "@engaja/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./tsconfig/base": "./tsconfig/base.json",
+    "./tsconfig/workspace": "./tsconfig/workspace.json",
+    "./vitest/base": "./vitest/base.ts"
+  },
+  "files": [
+    "dist",
+    "scripts",
+    "tsconfig",
+    "vitest"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf coverage dist reports",
+    "cycles": "pnpm --dir ../.. exec dependency-cruiser --config .dependency-cruiser.cjs apps packages",
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "lint": "eslint . --max-warnings=0",
+    "security:architecture": "pnpm --dir ../.. exec dependency-cruiser --config .dependency-cruiser.cjs apps packages",
+    "security:deps": "pnpm --dir ../.. audit --audit-level moderate --ignore GHSA-w5hq-g745-h8pq",
+    "security:secrets": "node scripts/secret-scan.mjs ../..",
+    "test": "vitest run --config vitest.config.ts",
+    "test:e2e": "vitest run --config vitest.config.ts --passWithNoTests --dir test/e2e",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "unused": "pnpm --dir ../.. exec knip --no-config-hints",
+    "visual:qa": "node scripts/visual-qa-placeholder.mjs"
+  },
+  "devDependencies": {
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

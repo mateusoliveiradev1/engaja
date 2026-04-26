@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: engaja_dev
+      POSTGRES_PASSWORD: engaja
+      POSTGRES_USER: engaja
+    healthcheck:
+      interval: 5s
+      retries: 12
+      test: ["CMD-SHELL", "pg_isready -U engaja -d engaja_dev"]
+      timeout: 5s
+    ports:
+      - "5432:5432"
+    volumes:
+      - engaja_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  engaja_postgres_data:

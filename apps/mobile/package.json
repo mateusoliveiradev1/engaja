@@ -1,0 +1,81 @@
+{
+  "name": "@engaja/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "expo-router/entry",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "app",
+    "assets",
+    "dist",
+    "src",
+    "app.json",
+    "babel.config.cjs"
+  ],
+  "scripts": {
+    "android": "expo run:android",
+    "build": "tsc -p tsconfig.build.json",
+    "bundle:analyze": "node ../../packages/config/scripts/bundle-budget.mjs mobile",
+    "clean": "rimraf coverage dist",
+    "dev": "expo start --dev-client",
+    "dev:types": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "doctor": "expo doctor",
+    "ios": "expo run:ios",
+    "lint": "eslint . --max-warnings=0",
+    "native:prebuild": "expo prebuild",
+    "start": "expo start",
+    "test": "vitest run --config vitest.config.ts",
+    "test:e2e": "vitest run --config vitest.config.ts --passWithNoTests --dir test/e2e",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@engaja/contracts": "workspace:*",
+    "@engaja/data": "workspace:*",
+    "@engaja/security": "workspace:*",
+    "@engaja/ui": "workspace:*",
+    "@expo/log-box": "55.0.11",
+    "@expo/metro-runtime": "55.0.10",
+    "@react-native-community/netinfo": "12.0.1",
+    "@tanstack/react-query": "5.99.2",
+    "expo": "55.0.17",
+    "expo-camera": "55.0.16",
+    "expo-constants": "55.0.15",
+    "expo-dev-client": "55.0.28",
+    "expo-image-picker": "55.0.19",
+    "expo-linking": "55.0.14",
+    "expo-notifications": "55.0.20",
+    "expo-router": "55.0.13",
+    "expo-secure-store": "55.0.13",
+    "expo-status-bar": "55.0.5",
+    "expo-system-ui": "55.0.16",
+    "expo-updates": "55.0.21",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.6",
+    "react-native-gesture-handler": "2.31.1",
+    "react-native-reanimated": "4.3.0",
+    "react-native-safe-area-context": "5.7.0",
+    "react-native-screens": "4.24.0",
+    "react-native-web": "^0.21.2",
+    "react-native-worklets": "0.8.1"
+  },
+  "devDependencies": {
+    "@engaja/config": "workspace:*",
+    "@react-native/metro-config": "0.83.6",
+    "@types/react": "19.2.14",
+    "babel-preset-expo": "55.0.18",
+    "react-test-renderer": "19.2.0",
+    "rimraf": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}
