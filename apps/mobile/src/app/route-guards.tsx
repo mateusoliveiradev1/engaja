@@ -13,7 +13,7 @@ import {
 import { ProductAccessStateScreen } from "./product-shell.js";
 import { useSession } from "./providers.js";
 
-export interface ProtectedRouteProps extends PropsWithChildren {
+interface ProtectedRouteProps extends PropsWithChildren {
   readonly group: Exclude<MobileRouteGroupKey, "auth">;
 }
 

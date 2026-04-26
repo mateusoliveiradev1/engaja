@@ -24,7 +24,7 @@ const defaultShiftId = "shift_today_collaborator";
 export type OperationRoutineId = OperationRoutineIdPayload;
 export type CollaboratorOperationsView = OperationsViewPayload;
 
-export interface CompleteChecklistItemInput {
+interface CompleteChecklistItemInput {
   readonly evidencePhotoUrl?: string;
   readonly itemId: string;
   readonly note?: string;
@@ -33,7 +33,7 @@ export interface CompleteChecklistItemInput {
   readonly shiftId?: string;
 }
 
-export interface CreateOperationsIssueInput {
+interface CreateOperationsIssueInput {
   readonly category: string;
   readonly evidencePhotoUrls?: readonly string[];
   readonly note?: string;
@@ -44,12 +44,12 @@ export interface CreateOperationsIssueInput {
   readonly shiftId?: string;
 }
 
-export interface CompleteLearningBiteInput {
+interface CompleteLearningBiteInput {
   readonly learningBiteId: string;
   readonly pendingSync?: boolean;
 }
 
-export interface OperationsService {
+interface OperationsService {
   completeChecklistItem(input: CompleteChecklistItemInput): Promise<CollaboratorOperationsView>;
   completeLearningBite(input: CompleteLearningBiteInput): Promise<CollaboratorOperationsView>;
   createIssue(input: CreateOperationsIssueInput): Promise<CollaboratorOperationsView>;

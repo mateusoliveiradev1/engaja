@@ -40,7 +40,6 @@
   "dependencies": {
     "@engaja/contracts": "workspace:*",
     "@engaja/data": "workspace:*",
-    "@engaja/security": "workspace:*",
     "@engaja/ui": "workspace:*",
     "@expo/log-box": "55.0.11",
     "@expo/metro-runtime": "55.0.10",

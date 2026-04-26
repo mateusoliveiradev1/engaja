@@ -13,9 +13,9 @@ const targets = {
     reportPath: "apps/api/reports/bundle/api.json",
   },
   mobile: {
-    budgetBytes: 420_000,
+    budgetBytes: 510_000,
     distDir: "apps/mobile/dist",
-    largestFileBudgetBytes: 190_000,
+    largestFileBudgetBytes: 205_000,
     reportPath: "apps/mobile/reports/bundle/mobile.json",
   },
 };

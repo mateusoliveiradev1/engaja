@@ -147,9 +147,6 @@ importers:
       '@engaja/data':
         specifier: workspace:*
         version: link:../../packages/data
-      '@engaja/security':
-        specifier: workspace:*
-        version: link:../../packages/security
       '@engaja/ui':
         specifier: workspace:*
         version: link:../../packages/ui

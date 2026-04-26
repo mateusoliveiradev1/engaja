@@ -35,7 +35,7 @@ export interface MobileSession {
   readonly userId: string;
 }
 
-export interface ThemeContextValue {
+interface ThemeContextValue {
   readonly colors: typeof flvSemanticColors;
   readonly palette: typeof flvPalette;
   readonly radii: typeof radiusScale;
@@ -43,7 +43,7 @@ export interface ThemeContextValue {
   readonly visualDirection: typeof flvVisualDirection;
 }
 
-export interface SessionContextValue {
+interface SessionContextValue {
   readonly acceptInvite: (input: AccessInviteAcceptRequestPayload) => Promise<void>;
   readonly clearSession: () => Promise<void>;
   readonly logout: () => Promise<void>;
@@ -55,17 +55,17 @@ export interface SessionContextValue {
   readonly signIn: (input: AuthLoginRequestPayload) => Promise<void>;
 }
 
-export type SessionStatus = "authenticated" | "restoring" | "unauthenticated";
+type SessionStatus = "authenticated" | "restoring" | "unauthenticated";
 
-export interface OfflineStatusContextValue {
+interface OfflineStatusContextValue {
   readonly isOffline: boolean;
 }
 
-export interface AnalyticsContextValue {
+interface AnalyticsContextValue {
   readonly emit: (eventName: string, properties?: Readonly<Record<string, unknown>>) => void;
 }
 
-export interface AppProvidersProps extends PropsWithChildren {
+interface AppProvidersProps extends PropsWithChildren {
   readonly authService?: MobileAuthService | undefined;
   readonly authStorage?: MobileAuthStorage | undefined;
   readonly initialSession?: MobileSession | null | undefined;
@@ -147,20 +147,12 @@ export function AppProviders({
   );
 }
 
-export function useTheme(): ThemeContextValue {
-  return useContext(ThemeContext);
-}
-
 export function useSession(): SessionContextValue {
   return useContext(SessionContext);
 }
 
 export function useOfflineStatus(): OfflineStatusContextValue {
   return useContext(OfflineStatusContext);
-}
-
-export function useAnalytics(): AnalyticsContextValue {
-  return useContext(AnalyticsContext);
 }
 
 function SessionProvider({

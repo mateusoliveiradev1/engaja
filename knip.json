@@ -26,7 +26,7 @@
       "project": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
     },
     "packages/data": {
-      "entry": ["drizzle.config.ts", "src/index.ts", "src/db/scripts/*.ts"],
+      "entry": ["drizzle.config.ts", "src/index.ts", "src/mobile.ts", "src/db/scripts/*.ts"],
       "project": ["drizzle.config.ts", "src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
     },
     "packages/domain": {

@@ -17,7 +17,7 @@ const DEFAULT_API_BASE_URL = resolveApiBaseUrl();
 export type CollaboratorRecognitionProfile = RecognitionProfilePayload;
 export type HealthyRecognitionRanking = RecognitionRankingPayload;
 
-export interface RecognitionService {
+interface RecognitionService {
   getProfile(input?: { readonly userId?: string }): Promise<CollaboratorRecognitionProfile>;
   getRanking(input?: { readonly limit?: number }): Promise<HealthyRecognitionRanking>;
   recognizeFeedPost(

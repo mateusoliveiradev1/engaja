@@ -38,7 +38,7 @@ interface EngagementDemoStore {
   requestCounter: number;
 }
 
-export interface EngagementFeedService {
+interface EngagementFeedService {
   acknowledgeAnnouncement(announcementId: string): Promise<FeedAnnouncementPayload>;
   addComment(input: FeedCommentCreateRequestPayload): Promise<FeedPostPayload>;
   createPost(input: FeedPostCreateRequestPayload): Promise<FeedPostPayload>;

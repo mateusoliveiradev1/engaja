@@ -35,13 +35,13 @@ export const leaderTabOptions = [
 
 export type LeaderTabId = (typeof leaderTabOptions)[number]["id"];
 
-export interface ProductTabDescriptor {
+interface ProductTabDescriptor {
   readonly badge?: string;
   readonly id: string;
   readonly label: string;
 }
 
-export interface ProductMetricDescriptor {
+interface ProductMetricDescriptor {
   readonly key: string;
   readonly label: string;
   readonly note?: string;
@@ -55,7 +55,7 @@ export interface ProductUserContextDescriptor {
   readonly roleLabel: string;
 }
 
-export interface ProductAccessStateScreenProps {
+interface ProductAccessStateScreenProps {
   readonly actionLabel?: string;
   readonly description: string;
   readonly isLoading?: boolean;
@@ -86,7 +86,7 @@ export function ProductAccessStateScreen({
   );
 }
 
-export interface CollaboratorHomeChromeProps {
+interface CollaboratorHomeChromeProps {
   readonly activeTab: CollaboratorTabId;
   readonly isOffline: boolean;
   readonly onTabChange: (nextTabId: string) => void;
@@ -135,7 +135,7 @@ export function CollaboratorHomeChrome({
   );
 }
 
-export interface LeaderHomeChromeProps {
+interface LeaderHomeChromeProps {
   readonly activeTab: LeaderTabId;
   readonly isOffline: boolean;
   readonly metrics: readonly ProductMetricDescriptor[];

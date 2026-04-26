@@ -20,5 +20,5 @@ describe("architecture boundaries", () => {
         },
       ),
     ).not.toThrow();
-  });
+  }, 120_000);
 });

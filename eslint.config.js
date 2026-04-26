@@ -28,6 +28,9 @@ export default [
     files: ["**/*.{js,cjs,mjs}"],
     languageOptions: {
       globals: {
+        Buffer: "readonly",
+        Headers: "readonly",
+        Request: "readonly",
         console: "readonly",
         __dirname: "readonly",
         module: "readonly",
@@ -84,7 +87,7 @@ export default [
           ]
         }
       ],
-      "import-x/no-cycle": ["error", { maxDepth: 10 }],
+      "import-x/no-cycle": ["error", { ignoreExternal: true, maxDepth: 10 }],
       "no-restricted-imports": [
         "error",
         {

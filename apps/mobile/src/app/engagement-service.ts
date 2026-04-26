@@ -35,7 +35,7 @@ export type EngagementCampaignClosure = EngagementCampaignClosurePayload;
 export type EngagementCampaignView = EngagementCampaignViewPayload;
 export type EngagementRewardGrant = EngagementRewardGrantPayload;
 
-export interface EngagementService {
+interface EngagementService {
   closeCampaign(input: { readonly campaignId: string }): Promise<EngagementCampaignClosure>;
   createCampaign(input: EngagementCampaignCreateRequestPayload): Promise<EngagementCampaignPayload>;
   getArchive(input?: { readonly userId?: string }): Promise<CollaboratorAchievementArchive>;

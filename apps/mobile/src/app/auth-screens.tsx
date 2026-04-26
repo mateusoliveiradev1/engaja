@@ -25,7 +25,7 @@ import { toSafeAuthMessage } from "./auth-service.js";
 import { authCopy } from "./copy.js";
 import { useSession } from "./providers.js";
 
-export interface InviteSignupScreenProps {
+interface InviteSignupScreenProps {
   readonly initialInviteToken?: string | undefined;
 }
 

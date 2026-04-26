@@ -41,7 +41,7 @@ interface ScheduleDemoStore {
   teamMembers: ScheduleTeamMemberPayload[];
 }
 
-export interface SuggestedSwapCandidate {
+interface SuggestedSwapCandidate {
   readonly sourceShiftId: string;
   readonly sourceShiftLabel: string;
   readonly targetShiftId: string;
@@ -50,7 +50,7 @@ export interface SuggestedSwapCandidate {
   readonly targetUserName: string;
 }
 
-export interface ScheduleService {
+interface ScheduleService {
   approveSwap(input: { readonly requestId: string }): Promise<ScheduleRequestPayload>;
   getCollaboratorView(input?: {
     readonly userId?: string;

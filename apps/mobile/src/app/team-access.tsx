@@ -27,7 +27,7 @@ import {
 import { teamAccessCopy } from "./copy.js";
 import type { MobileSession } from "./providers.js";
 
-export interface TeamAccessPanelProps {
+interface TeamAccessPanelProps {
   readonly authService?: MobileAuthService;
   readonly onInviteCountChange?: (inviteCount: number) => void;
   readonly session: MobileSession;
